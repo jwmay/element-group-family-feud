@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<title>Family Feud</title>
+		<title>MHS CHEM ONLINE ACTIVITIES</title>
 		<style>
 			body {
 				font-family: sans-serif;
@@ -13,91 +13,34 @@
 				margin: 0 auto;
 			}
 			
-			.logo img {
-				width: 30%;
-				display: block;
-				margin: 0 auto;
-			}
-			
-			.questions {
-				width: 50%;
-				height: 100%;
-				float: left;
-			}
-			
-			.questions h3 {
-				margin: 8px;
+			.content {
 				text-align: center;
-				font-variant: small-caps;
 			}
 			
-			.questions ol {
-				list-style-position: inside;
+			h3 {
+				margin: 2em 0;
 			}
 			
-			.questions li {
-				padding: 10px;
-				margin: 10px;
-				height: 30px;
-				cursor: pointer;
+			a {
+				display: block;
+				margin: 1em 0;
+				color: green;
+				text-decoration: none;
 			}
 			
-			.questions-blue li {
-				color: blue;
-				background-color: blue;
-			}
-			
-			.questions-red li {
-				color: red;
-				background-color: red;
-			}
-			
-			.view {
-				color: black !important;
-				background-color: none !important;
+			a:hover {
+				text-decoration: underline;
 			}
 		</style>
 	</head>
 	
 	<body>
 		<div class="container">
-			<div class="logo">
-				<img src="https://upload.wikimedia.org/wikipedia/en/7/77/FamilyFeud2007Logo.png">
-			</div>
-			<div class="questions questions-blue">
-				<h3>Similarities</h3>
-				<ol>
-					<li>Number of Valence Electrons</li>
-					<li>Number of Electrons Needed</li>
-					<li></li>
-					<li></li>
-					<li></li>
-					<li></li>
-					<li></li>
-				</ol>
-			</div>
-			<div class="questions questions-red">
-				<h3>Differences</h3>
-				<ol>
-					<li>Number of Electron Shells</li>
-					<li>Mass</li>
-					<li>Size (Atomic Radius)</li>
-					<li>Number of Protons (p<sup>+</sup>)</li>
-					<li>Number of Neutrons (n<sup>0</sup>)</li>
-					<li>Number of Electrons (e<sup>–</sup>)</li>
-					<li>Difference between Number of p<sup>+</sup> and n<sup>0</sup></li>
-				</ol>
+			<div class="content">
+				<h3>MHS CHEM ONLINE ACTIVITIES</h3>
+				<a href="element-group-family-feud.html">Element Group Family Feud</a>
+				<a href="boxes-review-game.html">Boxes Review Game</a>
 			</div>
 		</div>
-		
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-		<script>
-			$(function() {
-				var $question = $('.questions li');
-				$question.click(function() {
-					$(this).toggleClass('view');
-				});
-			});
-		</script>
 	</body>
 </html>
