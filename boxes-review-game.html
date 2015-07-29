@@ -1,0 +1,385 @@
+<html>
+	<head>
+		<title>Boxes Review Game</title>
+		<style>
+			body {
+				font-family: sans-serif;
+				font-size: 24px;
+				line-height: 40px;
+			}
+			
+			.container {
+				width: 1200px;
+				margin: 0 auto;
+			}
+			
+			.score-board {
+				margin: 40px auto;
+			}
+			
+			.score-board .group {
+				position: relative;
+				height: 40px;
+				margin-bottom: 20px;
+			}
+			
+			.score-board .group h4 {
+				display: inline-block;
+				position: absolute;
+				top: 0;
+				left: 0;
+				margin: 0;
+				padding: 0;
+				line-height: 40px;
+			}
+			
+			.score-board .group ul {
+				display: inline-block;
+				position: absolute;
+				top: 0;
+				left: 160px;
+				height: 40px;
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+			
+			.score-board .group ul li {
+				display: inline-block;
+				height: 40px;
+				width: 40px;
+				margin: 0;
+				padding: 0;
+				border: 2px solid #aaa;
+				line-height: 40px;
+				cursor: pointer;
+			}
+			
+			.fill {
+				border: 2px solid #fff !important;
+			}
+			
+			.red h4 {
+				color: red;
+			}
+
+			.red ul li.fill {
+				background-color: red;
+			}
+			
+			.green h4 {
+				color: green;
+			}
+			
+			.green ul li.fill {
+				background-color: green;
+			}
+			
+			.blue h4 {
+				color: blue;
+			}
+			
+			.blue ul li.fill {
+				background-color: blue;
+			}
+			
+			.yellow h4 {
+				color: yellow;
+			}
+			
+			.yellow ul li.fill {
+				background-color: yellow;
+			}
+			
+			.fuchsia h4 {
+				color: fuchsia;
+			}
+			
+			.fuchsia ul li.fill {
+				background-color: fuchsia;
+			}
+			
+			.maroon h4 {
+				color: maroon;
+			}
+			
+			.maroon ul li.fill {
+				background-color: maroon;
+			}
+			
+			.purple h4 {
+				color: purple;
+			}
+			
+			.purple ul li.fill {
+				background-color: purple;
+			}
+			
+			.aqua h4 {
+				color: aqua;
+			}
+			
+			.aqua ul li.fill {
+				background-color: aqua;
+			}
+			
+			.olive h4 {
+				color: olive
+			}
+			
+			.olive ul li.fill {
+				background-color: olive;
+			}
+			
+			.teal h4 {
+				color: teal;
+			}
+			
+			.teal ul li.fill {
+				background-color: teal;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<div class="container">
+			<div class="score-board">
+				<div class="group red">
+					<h4>Group 1</h4>
+					<ul>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+					</ul>
+				</div>
+				<div class="group blue">
+					<h4>Group 2</h4>
+					<ul>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+					</ul>
+				</div>
+				<div class="group green">
+					<h4>Group 3</h4>
+					<ul>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+					</ul>
+				</div>
+				<div class="group fuchsia">
+					<h4>Group 4</h4>
+					<ul>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+					</ul>
+				</div>
+				<div class="group maroon">
+					<h4>Group 5</h4>
+					<ul>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+					</ul>
+				</div>
+				<div class="group aqua">
+					<h4>Group 6</h4>
+					<ul>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+					</ul>
+				</div>
+				<div class="group purple">
+					<h4>Group 7</h4>
+					<ul>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+					</ul>
+				</div>
+				<div class="group olive">
+					<h4>Group 8</h4>
+					<ul>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+					</ul>
+				</div>
+				<div class="group teal">
+					<h4>Group 9</h4>
+					<ul>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script>
+			$(function() {
+				var $question = $('.group ul li');
+				$question.click(function() {
+					$(this).toggleClass('fill');
+				});
+			});
+		</script>
+	</body>
+</html>
