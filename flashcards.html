@@ -135,7 +135,10 @@
 					<h6>Deck</h6>
 					<ul>
 						<li>
-							<button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--primary" id="ionDeckButtonMobile">Ions</button>
+							<button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--primary" id="ionShortDeckButtonMobile">Ions (short list)</button>
+						</li>
+						<li>
+							<button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--primary" id="ionLongDeckButtonMobile">Ions (long list)</button>
 						</li>
 						<li>
 							<button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--primary" id="unitDeckButtonMobile">Units</button>
@@ -184,7 +187,10 @@
 										<h5>Deck</h5>
 										<div class="mdl-grid">
 											<div class="mdl-cell mdl-cell--6-col-desktop mdl-cell-4-col-tablet">
-												<button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--primary" id="ionDeckButton">Ions</button>
+												<button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--primary" id="ionShortDeckButton">Ions (short list)</button>
+											</div>
+											<div class="mdl-cell mdl-cell--6-col-desktop mdl-cell-4-col-tablet">
+												<button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--primary" id="ionLongDeckButton">Ions (long list)</button>
 											</div>
 											<div class="mdl-cell mdl-cell--6-col-desktop mdl-cell-4-col-tablet">
 												<button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--primary" id="unitDeckButton">Units</button>
@@ -210,10 +216,37 @@
 		<script>
 			$(document).ready(function() {
 				// Set the default deck; store the default decks and their cards.
-				var DEFAULT_DECK = "Ions";
+				var DEFAULT_DECK = "Ions (short list)";
 				var DEFAULT_DECKS = [
 					{
-						name: "Ions",
+						name: "Ions (short list)",
+						allow_reverse: true,
+						generator: function() {
+							var deck = [
+								new Card("acetate", "C<sub>2</sub>H<sub>3</sub>O<sub>2</sub><sup>-</sup>"),
+								new Card("chlorate", "ClO<sub>3</sub><sup>-</sup>"),
+								new Card("chlorite", "ClO<sub>2</sub><sup>-</sup>"),
+								new Card("cyanide", "CN<sup>-</sup>"),
+								new Card("bicarbonate", "HCO<sub>3</sub><sup>-</sup>"),
+								new Card("hydroxide", "OH<sup>-</sup>"),
+								new Card("nitrate", "NO<sub>3</sub><sup>-</sup>"),
+								new Card("nitrite", "NO<sub>2</sub><sup>-</sup>"),
+								new Card("perchlorate", "ClO<sub>4</sub><sup>-</sup>"),
+								new Card("permanganate", "MnO<sub>4</sub><sup>-</sup>"),
+								new Card("thiocyanate", "SCN<sup>-</sup>"),
+								new Card("carbonate", "CO<sub>3</sub><sup>2-</sup>"),
+								new Card("chromate", "CrO<sub>4</sub><sup>2-</sup>"),
+								new Card("sulfate", "SO<sub>4</sub><sup>2-</sup>"),
+								new Card("sulfite", "SO<sub>3</sub><sup>2-</sup>"),
+								new Card("phosphate", "PO<sub>4</sub><sup>3-</sup>"),
+								new Card("phosphite", "PO<sub>3</sub><sup>3-</sup>"),
+								new Card("ammonium", "NH<sub>4</sub><sup>+</sup>"),
+							];
+							return deck;
+						}
+					},
+					{
+						name: "Ions (long list)",
 						allow_reverse: true,
 						generator: function() {
 							var deck = [
@@ -236,6 +269,8 @@
 								new Card("chlorate", "ClO<sub>3</sub><sup>-</sup>"),
 								new Card("perchlorate", "ClO<sub>4</sub><sup>-</sup>"),
 								new Card("acetate", "C<sub>2</sub>H<sub>3</sub>O<sub>2</sub><sup>-</sup>"),
+								new Card("phosphate", "PO<sub>4</sub><sup>3-</sup>"),
+								new Card("phosphite", "PO<sub>3</sub><sup>3-</sup>"),
 								new Card("permanganate", "MnO<sub>4</sub><sup>-</sup>"),
 								new Card("dichromate", "Cr<sub>2</sub>O<sub>7</sub><sup>2-</sup>"),
 								new Card("chromate", "CrO<sub>4</sub><sup>2-</sup>"),
@@ -580,9 +615,10 @@
 
 				// DOM selectors for controlling the flashcard app.
 				var $flashcard = $("#flashcardControl");
-    			var $shuffleButton = $("#shuffleButton");
-    			var $reverseSwitch = $("#reverseSwitch");
-				var $ionDeckButton = $("#ionDeckButton, #ionDeckButtonMobile");
+				var $shuffleButton = $("#shuffleButton");
+				var $reverseSwitch = $("#reverseSwitch");
+				var $ionShortDeckButton = $("#ionShortDeckButton, #ionShortDeckButtonMobile");
+				var $ionLongDeckButton = $("#ionLongDeckButton, #ionLongDeckButtonMobile");
 				var $unitDeckButton = $("#unitDeckButton, #unitDeckButtonMobile");
 
 				// Handle response when flashcard is clicked.
@@ -590,10 +626,10 @@
 					app.advance();
 				});
 
-    			// Handle response when Shuffle button is clicked.
-    			$shuffleButton.click(function() {
-	    			app.shuffle(true);
-    			});
+				// Handle response when Shuffle button is clicked.
+				$shuffleButton.click(function() {
+					app.shuffle(true);
+				});
 
 				// Handle response when Reverse toggle switch is clicked.
 				$reverseSwitch.click(function() {
@@ -601,8 +637,11 @@
 				});
 
 				// Handle response when a deck selector button is clicked.
-				$ionDeckButton.click(function() {
-					app.changeToDeck("Ions");
+				$ionShortDeckButton.click(function() {
+					app.changeToDeck("Ions (short list)");
+				});
+				$ionLongDeckButton.click(function() {
+					app.changeToDeck("Ions (long list)");
 				});
 				$unitDeckButton.click(function() {
 					app.changeToDeck("Units");
